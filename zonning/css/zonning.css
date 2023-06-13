@@ -1,0 +1,142 @@
+@import url("./reset.css");
+/*---------------------------------------------------
+                    navigation
+---------------------------------------------------*/
+
+nav{
+  /* background-color: aqua; */
+}
+
+nav ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+
+}
+nav ul> :first-child{
+ margin-right: auto;
+}
+
+nav ul > *:not(:first-child){
+  display: none;
+}
+
+nav ul li {
+   font-size: 1.5rem;
+}
+
+
+#burger{
+  font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------
+                    MOBILE
+---------------------------------------------------*/
+
+#burger{
+  display: block;
+}
+
+
+section {
+  background-color: lightblue;
+  padding: 2rem;
+  
+}
+
+section > * {
+  background-color: cornflowerblue;
+}
+
+/* tout les enfants mettre en carrée
+ sauf le 1er enfant */
+section > *:not(:first-child) {
+  aspect-ratio: 1 / 1;
+}
+
+section > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+section > *:nth-child(3) {
+  background-image: url(/zonning/img/instagram-01.jpg);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+section > *:nth-child(3) p {
+  display: none;
+  color: #fff;
+  font-size: 3rem;
+
+}
+
+section > *:nth-child(3):hover p {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*---------------------------------------------------
+                    TABLETTE
+---------------------------------------------------*/
+@media screen and (min-width: 768px) {
+  #burger{
+    display: none;
+  }
+  section {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  section > *:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* appareil sur le tablette */
+  nav ul > *:not(:first-child){
+    display: block;
+  }
+}
+
+/*---------------------------------------------------
+                    DESKTOP
+---------------------------------------------------*/
+@media screen and (min-width: 1200px) {
+  section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
